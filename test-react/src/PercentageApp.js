@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 
 
@@ -47,7 +48,7 @@ class PercentageApp extends Component {
     
     handleTrans(value) {
         value = (value * 100).toFixed(2);
-        if(value < 1) {
+        if(value < 100) {
             this.setState({
                 transValue: `${value}%`
             })

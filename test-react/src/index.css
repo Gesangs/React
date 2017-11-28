@@ -12,3 +12,9 @@ body {
   font-size: 14px;
   border: 1px solid #ca3535;
 }
+
+
+.comment-delete {
+  float: right;
+  display: block;
+}

@@ -16,7 +16,7 @@ class Comment extends Component {
     componentWillMount() {
         this._updateTimeString()
         this.timer = setInterval(() => {
-            this._updateTimeString.bind(this);
+            this._updateTimeString();
         },5000)
     }
 
@@ -39,11 +39,23 @@ class Comment extends Component {
             : `${Math.round(Math.max(1, duratime))}秒前`
         })
     }
+    _getProcessedContent(content) {
+        // 防止XSS攻击
+        return content
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;")
+                .replace(/`([\s\S]+?)`/g, '<code>$1</code>')
+    }
     render() {
         const { comment } = this.props;
         return (
             <div>
-                {comment.username}: {comment.content}
+                {comment.username}: <p dangerouslySetInnerHTML={{
+  __html: this._getProcessedContent(comment.content)
+}} />
                 <span className='comment-delete'
                       onClick={this.handleDelete.bind(this)}>
                 删除 {this.state.timeString}</span>

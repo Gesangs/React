@@ -3,19 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 // import LessonsList from './lessons13.js';
-import CommentApp from './Comment/CommentApp';
+// import CommentApp from './Comment/CommentApp';
 // import PercentageApp from './PercentageApp.js';
 // import Post from './Post.js'
 // import Timer from './timer.js'
+import ThemeApp from './threeState/themeSwitch - High/ThemeApp.js'
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <div>
     {/* <App /> */}
     {/* <LessonsList /> */}
-    <CommentApp />
+    {/* <CommentApp /> */}
     {/* <PercentageApp/ > */}
     {/* <Post /> */}
     {/* <Timer /> */}
+    <ThemeApp />
     </div>, document.getElementById('root'));
 registerServiceWorker();

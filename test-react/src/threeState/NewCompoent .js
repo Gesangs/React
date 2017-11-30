@@ -1,3 +1,5 @@
+// 高阶组件（Higher-Order Components）
+
 import React, { Component } from 'react'
 
 export default (WrappedComponent, name) => {

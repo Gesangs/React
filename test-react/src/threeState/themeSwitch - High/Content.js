@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import ThemeSwitch from './ThemeSwitch.js'
-import { connect } from './connect.js'
+import { connect } from 'react-redux'
 
 class Content extends Component {
 
-    static contextTypes = {
+    static propTypes = {
         store: PropTypes.object
     }
 
